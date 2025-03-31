@@ -30,7 +30,6 @@ public class Pedido {
         }
     }
 
-    // Delega ações para o estado atual
     public void pagar() {
         estado.pagar(this);
     }

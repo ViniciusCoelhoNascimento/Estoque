@@ -5,17 +5,16 @@ import org.example.Pedido;
 public class PedidoEntregueEstado  implements EstadoPedido{
     @Override
     public void pagar(Pedido pedido) {
-        System.out.println("Pagamento realizado!");
-        pedido.setEstado(new PedidoPagoEstado());
+        System.out.println("Erro: Pedido já foi pago!");
     }
 
     @Override
     public void enviar(Pedido pedido) {
-        System.out.println("Erro: Pedido não foi pago!");
+        System.out.println("Erro: Pedido já foi enviado!");
     }
 
     @Override
     public void entregar(Pedido pedido) {
-        System.out.println("Erro: Pedido não foi enviado!");
+        System.out.println("Pedido já entregue!");
     }
 }
