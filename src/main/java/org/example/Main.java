@@ -9,11 +9,14 @@ public class Main {
     public static void main(String[] args) {
             Cliente cliente = new Cliente("João", new SemProgramaFidelidade());
 
-            Pedido pedido = new Pedido();
+            Pedido pedido = new Pedido(100);
             pedido.adicionarObservador(cliente);
 
             EstrategiaDesconto desconto = new DescontoNatal();
-            double precoFinal = desconto.calcularDesconto(100.0);
+
+            pedido.setEstrategiaDesconto(desconto);
+
+            double precoFinal = pedido.calcularValorFinal();
             System.out.println("Preço com desconto: R$" + precoFinal);
 
             pedido.pagar();
